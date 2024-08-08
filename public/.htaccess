@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^/index.html$
+    RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js)$
+    RewriteRule .* /index.html [L,R=302]
+</IfModule>
